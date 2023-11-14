@@ -51,7 +51,7 @@ function search() {
         }
 
         // 匹配用户输入域名后的子域名
-        else if (/^(https?:\/\/)?([\w.-]+)(\/.*)?$/.test(URL)) {
+        else if (/^((https?:\/\/)?([\w.-]+))\/([\w.%+-]*)?$/.test(URL)) {
             // 判断输入内容中是否存在 http 或 https 没输入则直接跳转
 
             if (!(URL.includes('http') || URL.includes('https'))) {
