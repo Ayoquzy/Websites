@@ -9,7 +9,7 @@
 ![Static Badge](https://img.shields.io/badge/%E8%90%8CICP%E5%A4%87-20231132%E5%8F%B7-%23FF1485?labelColor=rgb(80%2C%2080%2C%2080))
 
 # [Websites](#)
-### [Personal website that improves efficiency](https://szoxidy.com/Websites/index.html)
+### [Personal website that improves efficiency](https://szoxidy.com/websites/index.html)
     https://szoxidy.com/websites/index.html
 ### [Referenced to leftshine author](https://gitee.com/leftshine)
     https://leftshine.gitee.io/viaindex/defaultpage/index.html
