@@ -10,6 +10,6 @@
 
 # [Websites](#)
 ### [Personal website that improves efficiency](https://szoxidy.com/Websites/index.html)
-    https://szoxidy.com/websites/index.html [https://szoxidy.com/websites/index.html]
+    https://szoxidy.com/websites/index.html
 ### [Referenced to leftshine author](https://gitee.com/leftshine)
     https://leftshine.gitee.io/viaindex/defaultpage/index.html
