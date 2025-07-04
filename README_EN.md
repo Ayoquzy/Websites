@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">Szoxidy</h1>
-<p align="center"><strong>Welcome to my website.</strong></p>
+<p align="center"><strong>Welcome to my personal navigation website</strong></p>
 
 <div align="center">
   <a href="https://t.me/szoxidy" target="_blank">
@@ -21,32 +21,35 @@
 ## 🖥️ Preview
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/szoxidy/CDN/main/web/common/image/banner.png" alt="index" width="800"/>
+  <img src="https://raw.githubusercontent.com/szoxidy/CDN/main/web/common/image/light-mode.png" alt="index" width="800"/>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/szoxidy/CDN/main/web/common/image/content.png" alt="index" width="800"/>
+  <img src="https://raw.githubusercontent.com/szoxidy/CDN/main/web/common/image/dark-mode.png" alt="index" width="800"/>
 </p>
 
 ---
 
 ## ✨ Features
 
-* 🎐 **Responsive design**: Adapt to mobile and desktop, perfect presentation on multiple terminals.
-* 🚀 **Scrolling and parallax animation**: Avatars, titles, backgrounds, etc. are combined with pure CSS and a small
-  amount of JS to present cool animation effects.
-* 🌗 **Dark / Neon theme switching**: Support light, dark and neon modes, smooth transition.
-* 👻 **Widget & Project display**: Social links, dynamic cards, GitHub project list, real-time clock components.
-* ⚡ **High performance**: Prioritize the use of CSS animations and `@supports` features to reduce runtime overhead.
+* 🎯 **Smart Search Bar**: Supports multiple input formats including URLs, local file paths, IP addresses, etc., with automatic recognition and redirection
+* 🌗 **Theme Switching**: Supports light/dark themes, automatically follows system settings, with manual toggle support
+* ⏰ **Real-time Clock**: Displays current Beijing time with second-level precision
+* 🔗 **Bookmark Navigation**: Carefully curated quick access to commonly used websites, including learning, entertainment, development, and other categories
+* 📱 **Responsive Design**: Perfectly adapts to mobile and desktop devices
+* ⚡ **High Performance**: Built on Vue 3 Composition API with Vite for fast loading
 
 ---
 
 ## 🛠️ Tech Stack
 
-* **Bundler**: Vite
-* **Framework**: Vue 3 (Composition API)
-* **Language**: TypeScript, SCSS
-* **Animations**: Pure CSS animation + JS to control scrolling and parallax
+* **Build Tool**: Vite
+* **Frontend Framework**: Vue3 (Composition API)
+* **Development Language**: TypeScript
+* **Styling**: SCSS + TailwindCSS
+* **Time Processing**: moment-timezone
+* **Utility Library**: @vueuse/core
+* **Package Manager**: pnpm
 
 ---
 
@@ -55,10 +58,9 @@
 1. Make sure Node.js `>=16` is installed locally (20.x is recommended)
 
 ```bash
-
 # Clone the code
-git clone https://github.com/szoxidy/ww.szoxidy.com.git
-cd ww.szoxidy.com
+git clone https://github.com/szoxidy/Websites.git
+cd Websites
 
 # Install dependencies
 pnpm install

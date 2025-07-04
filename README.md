@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">Szoxidy</h1>
-<p align="center"><strong>欢迎来到我的网站.</strong></p>
+<p align="center"><strong>欢迎来到我的个人导航网站</strong></p>
 
 <div align="center">
   <a href="https://t.me/szoxidy" target="_blank">
@@ -21,31 +21,35 @@
 ## 🖥️ 预览图
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/szoxidy/CDN/main/web/common/image/banner.png" alt="index" width="800"/>
+  <img src="https://raw.githubusercontent.com/szoxidy/CDN/main/web/common/image/light-mode.png" alt="index" width="800"/>
 </p>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/szoxidy/CDN/main/web/common/image/content.png" alt="index" width="800"/>
+  <img src="https://raw.githubusercontent.com/szoxidy/CDN/main/web/common/image/dark-mode.png" alt="index" width="800"/>
 </p>
 
 ---
 
-## ✨ 功能
+## ✨ 功能特性
 
-* 🎐 **响应式设计**：适配移动端与桌面端，多终端完美呈现。
-* 🚀 **滚动与视差动画**：头像、标题、背景等结合纯 CSS 与少量 JS，呈现炫酷动画效果。
-* 🌗 **暗黑 / 霓虹主题切换**：支持浅色、深色与霓虹模式，平滑过渡。
-* 👻 **Widget & Project 展示**：社交链接、动态卡片、GitHub 项目列表、实时时钟组件。
-* ⚡ **高性能**：优先使用 CSS 动画与 `@supports` 特性，减少运行时开销。
+* 🎯 **智能搜索栏**：支持多种输入格式，包括网址、本地文件路径、IP地址等，自动识别并跳转
+* 🌗 **主题切换**：支持浅色/深色主题，自动跟随系统设置，支持手动切换
+* ⏰ **实时时钟**：显示当前北京时间，精确到秒
+* 🔗 **书签导航**：精心整理的常用网站快捷入口，包含学习、娱乐、开发等分类
+* 📱 **响应式设计**：完美适配移动端与桌面端
+* ⚡ **高性能**：基于 Vue 3 Composition API，使用 Vite 构建，快速加载
 
 ---
 
 ## 🛠️ 技术栈
 
-* **构建**: Vite
-* **框架**: Vue 3 (Composition API)
-* **语言**: TypeScript, SCSS
-* **动画**: Pure CSS 动画 + JS 控制滚动与视差
+* **构建工具**: Vite
+* **前端框架**: Vue3 (Composition API)
+* **开发语言**: TypeScript
+* **样式处理**: SCSS + TailwindCSS
+* **时间处理**: moment-timezone
+* **工具库**: @vueuse/core
+* **包管理**: pnpm
 
 ---
 
@@ -54,10 +58,9 @@
 1. 确保本地安装 Node.js `>=16`(建议 20.x)
 
 ```bash
-
 # 克隆代码
-git clone https://github.com/szoxidy/ww.szoxidy.com.git
-cd ww.szoxidy.com
+git clone https://github.com/szoxidy/Websites.git
+cd Websites
 
 # 安装依赖
 pnpm install
