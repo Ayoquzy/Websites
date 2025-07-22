@@ -1,53 +1,70 @@
-// 清空输入框工具函数：重置输入框并返回 false，便于统一处理后续流程
-const clearInput = (input: HTMLInputElement): boolean => {
-    input.value = "";
-    return false;
-};
+// 清空搜索输入框
+function clearSearchInput(): void {
+    const searchInput = document.getElementById("search_input") as HTMLInputElement;
+    if (searchInput) {
+        searchInput.value = "";
+    }
+}
 
-/**
- * useSearch: 处理用户输入，根据不同格式执行跳转或搜索
- * @returns boolean - 始终返回 false，以阻止表单默认提交行为
- */
+// 导航到指定URL并清空输入框
+function navigateAndClear(url: string): boolean {
+    window.location.href = url;
+    clearSearchInput();
+    return false;
+}
+
+// 主要的搜索功能
 export function useSearch(): boolean {
-    const elementInput = document.getElementById("search_input");
-    if (!(elementInput instanceof HTMLInputElement)) {
+    // 获取输入元素并进行运行时类型检查
+    const elementById = document.getElementById("search_input");
+    if (!elementById || !(elementById instanceof HTMLInputElement)) {
         return false;
     }
-    const input = elementInput;
-    // 去除首尾空白字符
-    const trimmed = elementInput.value.trim();
-    if (!trimmed) {
-        // 输入为空时，不做任何操作
-        return false;
+
+    // 读取并去除首尾空白
+    let URL = elementById.value.trim();
+    if (!URL) return false;
+
+    // 1. 本地文件路径（Windows 本地文件，如 "C:\path" 或 "C:/path"）
+    if (/^[A-Za-z]:[\\\/].*/.test(URL)) {
+        return navigateAndClear(`file:///${URL}`);
     }
-    /** * useSearch.ts:20 Not allowed to load local resource:
-        * 此段代码在服务器无法使用，因为浏览器的安全策略：任何在 http:// 或 https:// 上运行的网页，都被禁止跳转去加载 file:// 协议的本地资源。
-        * 如果需要使用，请git clone 在本地运行*/
-    /*
-        // 本地文件路径（Windows 本地文件，如 "C:\path" 或 "C:/path"）
-        if (/^[A-Za-z]:[\\\/].*!/.test(trimmed)) {
-            window.location.href = `file:///${trimmed}`;
-            clearInput(input);
-            return false;
-        }
-    */
-    let parsedUrl: URL;
-    try {
-        // 尝试直接解析（包含 http://、https://、ftp:// 等带协议的 URL）
-        parsedUrl = new URL(trimmed);
-    } catch {
-        try {
-            // 在默认 https:// 协议下解析（处理以 www. 或 域名 开头的情况）
-            parsedUrl = new URL(trimmed, "https://");
-        } catch {
-            // 其它输入交给搜索引擎
-            window.location.href = `https://cn.bing.com/search?q=${encodeURIComponent(trimmed)}`;
-            return false;
+
+    // 2. 以协议头或 www. 开头，统一跳到 https
+    if (/^(https?:\/\/|www\.)/.test(URL)) {
+        URL = URL.replace(/^https?:\/\//, "");
+        return navigateAndClear(`https://${URL}`);
+    }
+
+    // 3. 带路径的域名（必须包含 "/" 才算路径型 URL）
+    if (/^((https?:\/\/)?([\w.-]+))(\/[^"]+)$/.test(URL)) {
+        // 如果缺少协议，则加上 https://
+        if (!/^https?:\/\//.test(URL)) {
+            return navigateAndClear(`https://${URL}`);
         }
     }
 
-    // 跳转到解析后的 URL
-    window.location.href = parsedUrl.href;
-    clearInput(input);
-    return false;
+    // 4. IPv4 地址（可带端口）
+    if (/^(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)\.(25[0-5]|2[0-4]\d|[01]?\d\d?)(:\d+)?$/.test(URL)) {
+        return navigateAndClear(`https://${URL}`);
+    }
+
+    // 5. IPv6 地址（可带端口）
+    if (/^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}(:\d+)?$/.test(URL)) {
+        return navigateAndClear(`https://${URL}`);
+    }
+
+    // 6. 常见顶级域名结尾（.com/.org/.net/.gov/.edu/.top/.tv）
+    if (/\.(com|org|net|gov|edu|top|tv)$/.test(URL)) {
+        const prefix = /\.[a-zA-Z]{2,}$/.test(URL) ? "" : "www.";
+        return navigateAndClear(`https://${prefix}${URL}`);
+    }
+
+    // 7. 非 www. 的简单域名（如 example.co）
+    if (/^(?!www\.)[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/.test(URL)) {
+        return navigateAndClear(`https://www.${URL}`);
+    }
+
+    // 8. 其它输入，一律交给搜索引擎
+    return navigateAndClear(`https://www.bing.com/search?q=${encodeURIComponent(URL)}`);
 }
