@@ -1,7 +1,7 @@
 # <h4 align="right"><strong>简体中文 | </strong><a href="README_EN.md">English</a></h4>
 
 <p align="center">
-  <img src="https://q1.qlogo.cn/g?b=qq&nk=14234241479&s=640" width="138" alt="Logo" />
+  <img src="https://q1.qlogo.cn/g?b=qq&nk=1423424379&s=640" width="138" alt="Logo" />
 </p>
 
 <h1 align="center">Szoxidy</h1>
@@ -81,4 +81,5 @@ pnpm build
 * 访问网站：[https://www.szoxidy.com](https://www.szoxidy.com)
 
 > **声明**：此项目仅供学习交流，已获原作者同意，严禁用于商业用途或二次分发。
+
 
