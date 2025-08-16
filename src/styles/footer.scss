@@ -1,0 +1,45 @@
+/**
+  * 时间样式
+  * 字体大小: 16px;
+  * 背景流体: 动态 8s 流速相同 无限次;
+  * -webkit 背景流体: 动态 8s 流速相同 无限次;
+  * 背景图片: -webkit 水平线性渐变背景;
+  * -webkit 文本填充颜色: 透明;
+  * -webkit 背景渐变色的裁剪区域: 文本;
+  * -webkit 背景渐变色尺寸: 宽度两倍 高度与文本大小相同;
+  * 文本填充颜色: 水平线性渐变背景;
+  * 背景渐变色的裁剪区域: 文本;
+  * 背景渐变色尺寸: 颜色宽度 高度与文本大小相同;
+  * 背景窗口: 固定;
+}**/
+
+#currentTime {
+    font-size: 16px;
+    animation: animate 8s linear infinite;
+    -webkit-animation: animate 8s linear infinite;
+    background-image: -webkit-linear-gradient(to right, violet, indigo, #ff4c98, #d9138b, yellow, orange, red);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-background-size: 200% 100%;
+    background-image: linear-gradient(to right, #38b1fd, #300082, #ff4c98, green, yellow, orange, red);
+    background-clip: text;
+    background-size: 9% 100%;
+    background-attachment: fixed;
+}
+
+#footer {
+    font-size: 16px;
+    margin: 0;
+    width: 100%;
+    color: #000;
+    float: left;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    padding: 10px 0 10px;
+    background: rgb(255, 255, 255, .50);
+}
+
+#footer a {
+    text-decoration: none;
+}
