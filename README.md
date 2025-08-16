@@ -4,14 +4,14 @@
   <img src="https://q1.qlogo.cn/g?b=qq&nk=1423424379&s=640" width="138" alt="Logo" />
 </p>
 
-<h1 align="center">Szoxidy</h1>
+<h1 align="center">Ayoquzy</h1>
 <p align="center"><strong>欢迎来到我的个人导航网站</strong></p>
 
 <div align="center">
-  <a href="https://t.me/szoxidy" target="_blank">
+  <a href="https://t.me/ayoquzy" target="_blank">
     <img alt="Telegram" src="https://img.shields.io/badge/chat-telegram-blueviolet?style=flat-square&logo=Telegram" />
   </a>
-  <a href="https://blog.szoxidy.com/" target="_blank">
+  <a href="https://blog.ayoquzy.com/" target="_blank">
         <img alt="See" src="https://img.shields.io/badge/see-Szoxidy Blog-ff69b4">
     </a>
 </div>
@@ -81,5 +81,6 @@ pnpm build
 * 访问网站：[https://www.szoxidy.com](https://www.szoxidy.com)
 
 > **声明**：此项目仅供学习交流，已获原作者同意，严禁用于商业用途或二次分发。
+
 
 
